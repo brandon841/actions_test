@@ -18,6 +18,11 @@ def test_greet():
     assert result == "Hello, GitHub Actions!", f"Expected 'Hello, GitHub Actions!' but got '{result}'"
     print(f"✓ Test 3 passed: {result}")
     
+    # Test case 3
+    result = main.greet(123) #should raise ValueError
+    assert result == "Hello, 123!", f"Expected 'Hello, GitHub Actions!' but got '{result}'"
+    print(f"✓ Test 3 passed: {result}")
+    
     print("\nAll tests passed successfully!")
 
 
