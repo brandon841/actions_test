@@ -1,0 +1,32 @@
+name: Python Tests
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Run test script
+      run: |
+        echo "Running tests..."
+        python test_main.py
+        echo "Tests completed successfully!"
+    
+    - name: Run main script
+      run: |
+        echo "Running main script..."
+        python main.py
